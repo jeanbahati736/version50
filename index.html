@@ -1,0 +1,13 @@
+export default function Reports() {
+  const download = () => {
+    const token = localStorage.getItem('token');
+    window.open(`http://localhost:5000/api/reports/products-pdf?token=${token}`, '_blank');
+  };
+
+  return (
+    <div>
+      <h1>Generate Stock Report</h1>
+      <button onClick={download}>Download PDF Report</button>
+    </div>
+  );
+}
